@@ -1,11 +1,13 @@
 import { getNewList } from '../../../../api/new'
 import { useState, useEffect } from 'react'
+import {useNavigate} from 'react-router-dom'
 import '../inform.scss'
 import { Button } from 'antd'
 
 const New = ({ setShownew, setNewtitle }) => {
   const [newList, setNewList] = useState([])
   const [page, setPage] = useState(0)
+  const navigate = useNavigate()
 
   const getNew = async () => {
     try {
@@ -23,7 +25,6 @@ const New = ({ setShownew, setNewtitle }) => {
 
   return (
     <div className='container'>
-      {/* 退出按钮 */}
       {newList.slice(page * 5, (page + 1) * 5).map((item) => {
         const formattedDate = new Date(item.createdAt).toLocaleDateString()  // 格式化日期
         return (
