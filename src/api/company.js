@@ -5,12 +5,10 @@ export const getCompanyList = () => {
         method: 'get'
     })
 }
-export const Companysearch = ({title}) => {
+export const Companysearch = (title) => {
+  console.log(title)
   return request({
-    url:  '/company/search',
+    url:  `/company/search/${title}`,
     method: 'post',
-    data: {
-        title: title
-    }
   });
 };

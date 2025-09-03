@@ -31,6 +31,13 @@ const User = () => {
     setOpen(true)
    } },
 ];
+const items2 = [
+  { key: '1', label: '个人信息'
+    ,onClick:()=>{
+      navigate('info')
+    }
+  },
+];
 const showinfo = async () => {
   const res = await getUserInfo({name})
   console.log(res)
@@ -74,6 +81,7 @@ const showinfo = async () => {
             mode="inline"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
+            items={items2}
             style={{ height: '100%', borderInlineEnd: 0 }}
           />
         </Sider>

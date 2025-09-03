@@ -9,15 +9,15 @@ const SearchList = () => {
     const show=(index)=>{
         switch(index){
             case 1:
-                return <SearchJob title={title} />
+                return <SearchJob keyword={keyword} />
             case 2:
-                return <Company title={title} />
+                return <Company keyword={keyword} />
             case 3:
                 return <SearchContent />
         }
     }
     const params = useParams()
-    const title = params.title
+    const keyword = params.title
     useEffect(()=>{
     },[])
     return(
@@ -28,7 +28,6 @@ const SearchList = () => {
           <Button type='primary' onClick={()=>setIndex(3)}>内容</Button>
         </div>
         <div>
-            {title}
         </div>
           {show(index)}
         </div>

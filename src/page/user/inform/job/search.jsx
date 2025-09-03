@@ -10,7 +10,6 @@ const Search = ({ setIsSearch, setKeyword, searchlist}) => {
           onClick={() => {
             setIsSearch(true);
             setKeyword('');
-            console.log('tuichu');
           }}
         >
           ← 返回

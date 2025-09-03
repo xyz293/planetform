@@ -10,6 +10,7 @@ const SearchDetail = lazy(() => import('../page/user/inform/job/job-detail'))
 const Searchlist = lazy(() => import('../page/user/inform/job/searchlist'))
 const Company = lazy(() => import('../page/user/inform/search/company'))
 const SearchJob = lazy(() => import('../page/user/inform/search/searchjob'))
+const Info = lazy(() => import('../page/user/student/index'))
 const router =[
     {
     path: '/',
@@ -28,6 +29,16 @@ const router =[
                     <Spin />
                 </div>}>
                     <Product />
+                </Suspense>
+            )
+        },
+        {
+            path:'info',
+            element:(
+                <Suspense fallback={<div>
+                    <Spin />
+                </div>}>
+                    <Info />
                 </Suspense>
             )
         },
